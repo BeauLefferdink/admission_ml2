@@ -1,5 +1,9 @@
 # App to predict the chances of admission using a pre-trained ML model in Streamlit
 
+password_guess = st.text_input("What is the Password?")
+if password_guess != st.secrets["password"]:
+ st.stop()
+
 # Import libraries
 import streamlit as st
 import pandas as pd
@@ -96,4 +100,6 @@ with tab4:
     st.write("### Coverage Plot")
     st.image('coverage.svg')
     st.caption("Range of predictions with confidence intervals.")
+
+
 
